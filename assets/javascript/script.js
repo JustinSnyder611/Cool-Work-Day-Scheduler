@@ -21,14 +21,13 @@ let hour9 = time9.dataset.time
 let hours = [hour1,hour2,hour3,hour4,hour5,hour6,hour7,hour8,hour9]
 let currentHour = dayjs().get('h')
 
-
+//Date at the top of the page that refreshes every second
 date.innerHTML = dayjs().format('dddd, MMMM DD, h:mm:ss A')
-
 setInterval(function() {
     date.innerHTML = dayjs().format('dddd, MMMM DD h:mm:ss A')
 }, 1000)
 
-
+//Checks all of the rows if their time is in the past,present, or future
 for (let i = 0; i < 9; i++) {
     if (currentHour > hours[i]) {
         times[i].className = 'past col';
@@ -48,6 +47,8 @@ for (let i = 0; i < 9; i++) {
         times[i].className = 'future col'
     }
 }
+
+//displays all stored items
 window.onload = function() {
     time1.value = localStorage.getItem('stored9am')
     time2.value = localStorage.getItem('stored10am')
@@ -59,6 +60,8 @@ window.onload = function() {
     time8.value = localStorage.getItem('stored4pm')
     time9.value = localStorage.getItem('stored5pm')
 }
+
+//buttons that store that rows's input
 function nineButton() {
     localStorage.setItem('stored9am', time1.value)
 }
@@ -95,7 +98,7 @@ function fiveButton() {
     localStorage.setItem('stored5pm', time9.value)
 }
 
-
+//buttons that remove that row's saved input
 function nineTrash() {
     localStorage.removeItem('stored9am')
     time1.value = ''
