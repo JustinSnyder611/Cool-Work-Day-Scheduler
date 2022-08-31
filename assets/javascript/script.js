@@ -44,3 +44,49 @@ for (let i = 0; i < 9; i++) {
         times[i].className = 'future col'
     }
 }
+window.onload = function() {
+    time1.value = localStorage.getItem('stored9am')
+    time2.value = localStorage.getItem('stored10am')
+    time3.value = localStorage.getItem('stored11am')
+    time4.value = localStorage.getItem('stored12pm')
+    time5.value = localStorage.getItem('stored1pm')
+    time6.value = localStorage.getItem('stored2pm')
+    time7.value = localStorage.getItem('stored3pm')
+    time8.value = localStorage.getItem('stored4pm')
+    time9.value = localStorage.getItem('stored5pm')
+}
+function nineButton() {
+    localStorage.setItem('stored9am', time1.value)
+}
+
+function tenButton() {
+    localStorage.setItem('stored10am', time2.value)
+}
+
+function elevenButton() {
+    localStorage.setItem('stored11am', time3.value)
+}
+
+function twelveButton() {
+    localStorage.setItem('stored12pm', time4.value)
+}
+
+function oneButton() {
+    localStorage.setItem('stored1pm', time5.value)
+}
+
+function twoButton() {
+    localStorage.setItem('stored2pm', time6.value)
+}
+
+function threeButton() {
+    localStorage.setItem('stored3pm', time7.value)
+}
+
+function fourButton() {
+    localStorage.setItem('stored4pm', time8.value)
+}
+
+function fiveButton() {
+    localStorage.setItem('stored5pm', time9.value)
+}
