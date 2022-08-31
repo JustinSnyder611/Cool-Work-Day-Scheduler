@@ -19,7 +19,8 @@ let hour7 = time7.dataset.time
 let hour8 = time8.dataset.time
 let hour9 = time9.dataset.time
 let hours = [hour1,hour2,hour3,hour4,hour5,hour6,hour7,hour8,hour9]
-let currentHour = dayjs().get('hour')
+let currentHour = dayjs().get('h')
+
 
 date.innerHTML = dayjs().format('dddd, MMMM DD, h:mm:ss A')
 
@@ -27,15 +28,18 @@ setInterval(function() {
     date.innerHTML = dayjs().format('dddd, MMMM DD h:mm:ss A')
 }, 1000)
 
+
 for (let i = 0; i < 9; i++) {
-    if (currentHour == hours[i]) {
-        times[i].className = 'present col'
+    if (currentHour > hours[i]) {
+        times[i].className = 'past col';
+        times[i].disabled = true;
     }
 }
 
 for (let i = 0; i < 9; i++) {
-    if (currentHour > hours[i]) {
-        times[i].className = 'past col'
+    if (currentHour == hours[i]) {
+        times[i].className = 'present col'
+        times[i].disabled = true;
     }
 }
 
@@ -89,4 +93,50 @@ function fourButton() {
 
 function fiveButton() {
     localStorage.setItem('stored5pm', time9.value)
+}
+
+
+function nineTrash() {
+    localStorage.removeItem('stored9am')
+    time1.value = ''
+}
+
+function tenTrash() {
+    localStorage.removeItem('stored10am')
+    time2.value = ''
+}
+
+function elevenTrash() {
+    localStorage.removeItem('stored11am')
+    time3.value = ''
+}
+
+function twelveTrash() {
+    localStorage.removeItem('stored12pm')
+    time4.value = ''
+}
+
+function oneTrash() {
+    localStorage.removeItem('stored1pm')
+    time5.value = ''
+}
+
+function twoTrash() {
+    localStorage.removeItem('stored2pm')
+    time6.value = ''
+}
+
+function threeTrash() {
+    localStorage.removeItem('stored3pm')
+    time7.value = ''
+}
+
+function fourTrash() {
+    localStorage.removeItem('stored4pm')
+    time8.value = ''
+}
+
+function fiveTrash() {
+    localStorage.removeItem('stored5pm')
+    time9.value = ''
 }

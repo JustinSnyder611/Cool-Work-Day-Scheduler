@@ -47,9 +47,17 @@ textarea {
   color: white;
 }
 
+.past:hover {
+  cursor: not-allowed;
+}
+
 .present {
   background-color: #ff6961;
   color: white;
+}
+
+.present:hover {
+  cursor: not-allowed;
 }
 
 .future {
@@ -68,6 +76,20 @@ textarea {
 }
 
 .saveBtn:hover {
-  font-size: 50px;
+  font-size: 43px;
+  transition: all 0.3s ease-in-out;
+}
+
+.trashBtn {
+  border-left: 1px solid black;
+  border-radius: 15px;
+  background-color: orangered;
+  color: black;
+  font-size: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.trashBtn:hover {
+  font-size: 73px;
   transition: all 0.3s ease-in-out;
 }
